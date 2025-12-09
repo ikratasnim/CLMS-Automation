@@ -1,0 +1,25 @@
+{
+  "name": "creatorlms-automation-testing",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:report": "npx playwright show-report",
+    "test:staging": "ENVIRONMENT=staging npx playwright test",
+    "test:prod": "ENVIRONMENT=production npx playwright test",
+    "clean:reports": "rm -rf playwright-report test-results",
+    "codegen": "npx playwright codegen",
+    "test:manual-course": "npx playwright test tests/manual-testing-course.spec.js",
+    "test:manual-headed": "npx playwright test tests/manual-testing-course.spec.js --headed",
+    "test:comprehensive": "npx playwright test tests/comprehensive-course-creation.spec.js",
+    "test:comprehensive-headed": "npx playwright test tests/comprehensive-course-creation.spec.js --headed",
+    "test:course-only": "npx playwright test tests/*course*.spec.js",
+    "test:debug": "npx playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "dotenv": "^16.4.0"
+  }
+}
